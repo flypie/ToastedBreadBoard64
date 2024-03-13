@@ -1,0 +1,84 @@
+
+(rules PCB ToastedBreadBoard64
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 730)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.7)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.6)
+    )
+  )
+  (rule
+    (width 1000.0)
+    (clear 200.2)
+    (clear 500.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "unconnected-(U1-PIN1-Pad1)" "unconnected-(U1-PIN2-Pad2)" "unconnected-(U1-PIN3-Pad3)" "Net-(J1-Pin_1)" "Net-(J1-Pin_10)" "Net-(J2-Pin_1)" "Net-(J2-Pin_10)" "Net-(J4-Pin_1)"
+    "Net-(J4-Pin_10)" "Net-(J5-Pin_1)" "Net-(J5-Pin_10)" "unconnected-(U1-PIN4-Pad4)" "unconnected-(U1-PIN5-Pad5)" "unconnected-(U1-PIN6-Pad6)" "unconnected-(U1-PIN7-Pad7)" "unconnected-(U1-PIN8-Pad8)"
+    "unconnected-(U1-PIN9-Pad9)" "unconnected-(U1-PIN10-Pad10)" "unconnected-(U1-PIN11-Pad11)" "unconnected-(U1-PIN12-Pad12)" "unconnected-(U1-PIN13-Pad13)" "unconnected-(U1-PIN14-Pad14)" "unconnected-(U1-PIN15-Pad15)" "unconnected-(U1-PIN16-Pad16)"
+    "unconnected-(U1-PIN17-Pad17)" "unconnected-(U1-PIN18-Pad18)" "unconnected-(U1-PIN19-Pad19)" "unconnected-(U1-PIN20-Pad20)" "unconnected-(U1-PIN21-Pad21)" "unconnected-(U1-PIN22-Pad22)" "unconnected-(U1-PIN23-Pad23)" "unconnected-(U1-PIN24-Pad24)"
+    "unconnected-(U1-PIN25-Pad25)" "unconnected-(U1-PIN26-Pad26)" "unconnected-(U1-PIN27-Pad27)" "unconnected-(U1-PIN28-Pad28)" "unconnected-(U1-PIN29-Pad29)" "unconnected-(U1-PIN30-Pad30)" "unconnected-(U1-PIN31-Pad31)" "unconnected-(U1-PIN32-Pad32)"
+    "unconnected-(U1-PIN33-Pad33)" "unconnected-(U1-PIN34-Pad34)" "unconnected-(U1-PIN35-Pad35)" "unconnected-(U1-PIN36-Pad36)" "unconnected-(U1-PIN37-Pad37)" "unconnected-(U1-PIN38-Pad38)" "unconnected-(U1-PIN39-Pad39)" "unconnected-(U1-PIN40-Pad40)"
+    "unconnected-(U1-PIN41-Pad41)" "unconnected-(U1-PIN42-Pad42)" "unconnected-(U1-PIN43-Pad43)" "unconnected-(U1-PIN44-Pad44)" "unconnected-(U1-PIN45-Pad45)" "unconnected-(U1-PIN46-Pad46)" "unconnected-(U1-PIN47-Pad47)" "unconnected-(U1-PIN48-Pad48)"
+    "unconnected-(U1-PIN49-Pad49)" "unconnected-(U1-PIN50-Pad50)" "unconnected-(U1-PIN51-Pad51)" "unconnected-(U1-PIN52-Pad52)" "unconnected-(U1-PIN53-Pad53)" "unconnected-(U1-PIN54-Pad54)" "unconnected-(U1-PIN55-Pad55)" "unconnected-(U1-PIN56-Pad56)"
+    "unconnected-(U1-PIN57-Pad57)" "unconnected-(U1-PIN58-Pad58)" "unconnected-(U1-PIN59-Pad59)" "unconnected-(U1-PIN60-Pad60)" "unconnected-(U1-PIN61-Pad61)" "unconnected-(U1-PIN62-Pad62)" "unconnected-(U1-PIN63-Pad63)" "unconnected-(U1-PIN64-Pad64)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
